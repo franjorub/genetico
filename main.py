@@ -8,18 +8,15 @@ from utils.files import generate_csv
 if __name__ == '__main__':
 
     results = []
+    generate_random_population(1000)
+    population = Population()
+    results.append(['#', 'BTC', 'USDT', 'XRP', 'BHC', 'ETH',	'EOS', 'LTC', 'BNB', 'ADA', 'Fitness', 'Performance', 'Risk'])
 
     for i in range(30):
-        generate_random_population(220)
-        population = Population()
-
-        for _ in range(100):
-            population.genetic_algorithm()
-
+        population.genetic_algorithm()
         best_chromosome, fitness, performance, risk = population.get_best_chromosome()
-
         results.append(
-            [i + 1, *best_chromosome, fitness, performance, risk]
+            [i+1, *best_chromosome, fitness, performance, risk]
         )
 
     generate_csv(results)

@@ -20,7 +20,7 @@ class Population:
         self.cross_probability = 0.80
         self.mutation_probability = 0.025
         # TODO: change to 0.1 for 220 input-population - 0.25 test for 10
-        self.selection_percentage = 0.1
+        self.selection_percentage = 0.05
 
     def load_population(self):
         file = open('input-population.txt')
